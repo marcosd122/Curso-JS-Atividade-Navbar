@@ -7,14 +7,36 @@
     <title>Menu</title>
     
     <!--Font Awesome cdn link-->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
     <!--css link-->
 
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
+
+    <header>
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+        <nav class="navbar">
+            <a href="#" data-text="home">home</a>
+            <a href="#" data-text="sobre">sobre</a>
+            <a href="#" data-text="galeria">galeria</a>
+            <a href="#" data-text="portfolio">portfolio</a>
+            <a href="#" data-text="blog">blog</a>
+            <a href="#" data-text="contatos">contatos</a>
+        </nav>
+    </header>
+
+    <script>
+        document.querySelector('#menu-btn').onclick = () => {
+            document.querySelector('#menu-btn').classList.toggle('fa-times');
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+
+    </script>
     
 </body>
 </html>

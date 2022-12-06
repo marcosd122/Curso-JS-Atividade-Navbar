@@ -1,0 +1,111 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    transition: all .3s ease-out;
+    text-transform: uppercase;
+    font-weight: normal;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+  }
+  
+  :root {
+    --cor-primaria: #6c63ff;
+    --cor-sucesso: #00bf8e;
+    --cor-alerta: #f7c94b;
+    --cor-perigo: #f75842;
+    --cor-perigo-variante: rgba(247, 88, 66, 0.4);
+    --cor-branco: #fff;
+    --cor-clara: rgba(255, 255, 255, 0.7);
+    --cor-escura: #000;
+    --cor-bg: #1f2641;
+    --cor-bg1: #2e3267;
+    --cor-bg2: #424890;
+  
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+      
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    color: var(--cor-branco);
+    background: var(--cor-bg);
+    min-height: 100vh;    
+    background-image: url(img/bg-texture.png);
+  }
+
+#menu-btn {
+    position: fixed;
+    top: 20px; right: 30px;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+    cursor: pointer;
+    background: var(--cor-sucesso);
+    color: var(--cor-escura);
+    text-align: center;
+    z-index: 1000;
+}
+
+#menu-btn.fa-times {
+    transform: rotate(180deg);
+    background: var(--cor-alerta);
+    color: var(--cor-branco);
+}
+
+.navbar {
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background: var(--cor-bg1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-bottom: 50px;
+    clip-path: circle(0% at 95.3% 8.5%);
+    background-image: url(img/bg-texture.png);
+}
+
+.navbar.active {
+    clip-path: circle(140% at 95.3% 8.5%);
+}
+
+.navbar a {
+    font-size: 30px;
+    padding-bottom: 30px;
+    color: var(--cor-branco);    
+}
+
+.navbar a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: var(--cor-escura);
+    pointer-events: none;
+    font-weight: bolder;
+    letter-spacing: .4em;
+    opacity: 0;
+    z-index: -1;
+}
+
+.navbar a:hover::before {
+    letter-spacing: 0em;
+    opacity: .1;
+    transition: .3s ease-out;
+}
